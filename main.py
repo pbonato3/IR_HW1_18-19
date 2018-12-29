@@ -55,8 +55,29 @@ def load_eval(MAP, P_10, RPrec, files_path):
 load_eval(MAP = MAP, P_10 = P_10, RPrec = RPrec, files_path= eval_files_paths)
 last_index = len(MAP[0]) - 1
 
-plt.plot([1,2,3,4],[MAP[0][last_index], MAP[1][last_index], MAP[2][last_index], MAP[3][last_index]])
+#plt.plot(['Run_0', 'Run_1', 'Run_2', 'Run_3'],[MAP[0][last_index], MAP[1][last_index], MAP[2][last_index], MAP[3][last_index]])
+#plt.ylabel('MAP')
+#plt.title("MAP values per run")
+#plt.show()
+
+#plt.plot(['Run_0', 'Run_1', 'Run_2', 'Run_3'],[P_10[0][last_index], P_10[1][last_index], P_10[2][last_index], P_10[3][last_index]])
+#plt.ylabel('P@10')
+#plt.title("P@10 values per run")
+#plt.show()
+
+
+#plt.plot(['Run_0', 'Run_1', 'Run_2', 'Run_3'],[RPrec[0][last_index], RPrec[1][last_index], RPrec[2][last_index], RPrec[3][last_index]])
+#plt.ylabel('RPrec')
+#plt.title("RPrec values per run")
+#plt.show()
+
+plt.boxplot([MAP[0][:last_index-1], MAP[1][:last_index-1], MAP[2][:last_index-1], MAP[3][:last_index-1]])
 plt.ylabel('MAP')
-plt.xlabel('RUN')
-plt.title("MAP values per run")
+plt.xlabel('Run_#')
 plt.show()
+
+fvalue, pvalue = stats.f_oneway(MAP[0][:last_index-1], MAP[1][:last_index-1], MAP[2][:last_index-1], MAP[3][:last_index-1])
+print "F_value: " , fvalue , " P_value: ", pvalue
+
+
+
