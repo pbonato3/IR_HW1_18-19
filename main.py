@@ -1,14 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
+from statsmodels.stats.multicomp import MultiComparison
 
 # paths of the files containing the evaluations
 eval_files_paths = []
+
+
 
 # lists of lists:   [["eval_0_metrics"], ["eval_1_metrics"], ["eval_2_metrics"], ["eval_3_metrics"]]
 MAP = []
 P_10 = []
 RPrec = []
+
+# variable to store last index of the arrays
+last_index = 0
 
 
 # function to load evaluation metrics as:  [["eval_0_metrics"], ["eval_1_metrics"], ["eval_2_metrics"], ["eval_3_metrics"]]
@@ -50,6 +56,15 @@ def load_eval(MAP, P_10, RPrec, files_path):
 		# close file
 		file.close()
 
+# function that computes multicomparison Tukey 0.05
+def multicompare(measures):
+	mc_input = measures[0][:last_index-1] + measures[1][:last_index-1] + measures[2][:last_index-1] + measures[3][:last_index-1]
+	mc_ids = ['Run_0'] * (last_index -1) + ['Run_1'] * (last_index -1) + ['Run_2'] * (last_index -1) + ['Run_3'] * (last_index -1)
+	mc = MultiComparison(mc_input, mc_ids)
+	result = mc.tukeyhsd(0.05)
+	return result
+
+
 
 #####################################################
 # RETRIEVAL WITHOUT QUERY EXPANSION
@@ -65,6 +80,8 @@ last_index = len(MAP[0]) - 1
 print "MAP:   ", MAP[0][last_index], MAP[1][last_index], MAP[2][last_index], MAP[3][last_index]
 print "P@10:  ", P_10[0][last_index], P_10[1][last_index], P_10[2][last_index], P_10[3][last_index]
 print "RPrec: ", RPrec[0][last_index], RPrec[1][last_index], RPrec[2][last_index], RPrec[3][last_index]
+
+print '\n'
 
 # Print of the boxplots 
 plt.boxplot([MAP[0][:last_index-1], MAP[1][:last_index-1], MAP[2][:last_index-1], MAP[3][:last_index-1]])
@@ -127,7 +144,31 @@ print "ANOVA 1-way, RPrec, TF_IDF runs:"
 fvalue, pvalue = stats.f_oneway(RPrec[1][:last_index-1], RPrec[3][:last_index-1])
 print "F_value: " , fvalue , " P_value: ", pvalue
 
+#print of Multicomparison Tukey
+print '\n Multicomare of AP metrics'
+print multicompare(MAP)
+print '\n Multicomare of P@10 metrics'
+print multicompare(P_10)
+print '\n Multicomare of RPrec metrics'
+print multicompare(RPrec)
 
+print '\n'
+
+# prints of Anova 1-way withount run 2
+print "ANOVA 1-way, AP, without Run_2:" 
+fvalue, pvalue = stats.f_oneway(MAP[0][:last_index-1], MAP[1][:last_index-1], MAP[3][:last_index-1])
+print "F_value: " , fvalue , " P_value: ", pvalue
+print '\n'
+print "ANOVA 1-way, P@10, without Run_2:" 
+fvalue, pvalue = stats.f_oneway(P_10[0][:last_index-1], P_10[1][:last_index-1], P_10[3][:last_index-1])
+print "F_value: " , fvalue , " P_value: ", pvalue
+print '\n'
+print "ANOVA 1-way, RPrec, without Run_2:" 
+fvalue, pvalue = stats.f_oneway(RPrec[0][:last_index-1], RPrec[1][:last_index-1], RPrec[3][:last_index-1])
+print "F_value: " , fvalue , " P_value: ", pvalue
+
+
+print '\n'
 
 
 
@@ -156,6 +197,8 @@ print "MAP:   ", MAP[0][last_index], MAP[1][last_index], MAP[2][last_index], MAP
 print "P@10:  ", P_10[0][last_index], P_10[1][last_index], P_10[2][last_index], P_10[3][last_index]
 print "RPrec: ", RPrec[0][last_index], RPrec[1][last_index], RPrec[2][last_index], RPrec[3][last_index]
 
+print '\n'
+
 # Print of the boxplots 
 plt.boxplot([MAP[0][:last_index-1], MAP[1][:last_index-1], MAP[2][:last_index-1], MAP[3][:last_index-1]])
 plt.title('Boxplot of Average Precision')
@@ -215,4 +258,27 @@ print "F_value: " , fvalue , " P_value: ", pvalue
 
 print "ANOVA 1-way, RPrec, TF_IDF runs:"  
 fvalue, pvalue = stats.f_oneway(RPrec[1][:last_index-1], RPrec[3][:last_index-1])
+print "F_value: " , fvalue , " P_value: ", pvalue
+
+#print of Multicomparison Tukey
+print '\n Multicomare of AP metrics'
+print multicompare(MAP)
+print '\n Multicomare of P@10 metrics'
+print multicompare(P_10)
+print '\n Multicomare of RPrec metrics'
+print multicompare(RPrec)
+
+print '\n'
+
+# prints of Anova 1-way withount run 2
+print "ANOVA 1-way, AP, without Run_2:" 
+fvalue, pvalue = stats.f_oneway(MAP[0][:last_index-1], MAP[1][:last_index-1], MAP[3][:last_index-1])
+print "F_value: " , fvalue , " P_value: ", pvalue
+print '\n'
+print "ANOVA 1-way, P@10, without Run_2:" 
+fvalue, pvalue = stats.f_oneway(P_10[0][:last_index-1], P_10[1][:last_index-1], P_10[3][:last_index-1])
+print "F_value: " , fvalue , " P_value: ", pvalue
+print '\n'
+print "ANOVA 1-way, RPrec, without Run_2:" 
+fvalue, pvalue = stats.f_oneway(RPrec[0][:last_index-1], RPrec[1][:last_index-1], RPrec[3][:last_index-1])
 print "F_value: " , fvalue , " P_value: ", pvalue
