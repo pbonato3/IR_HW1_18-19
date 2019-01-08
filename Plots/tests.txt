@@ -9,39 +9,39 @@ RPrec:  0.2705 0.2725 0.1701 0.2485
 
 
 ANOVA 1-way, AP, all runs:
-F_value:  3.3049517787341163  P_value:  0.02137066541175464
+F_value:  3.276239569877693  P_value:  0.02214360820320229
 ANOVA 1-way, AP, BM25 runs:
-F_value:  7.824921045638202  P_value:  0.006226581737823212
+F_value:  7.719719932356237  P_value:  0.006547189068056758
 ANOVA 1-way, AP, TF_IDF runs:
-F_value:  0.5364900435963  P_value:  0.46567557019319616
+F_value:  0.5517302317411463  P_value:  0.45938840156826577
 
 
 ANOVA 1-way, P@10, all runs:
-F_value:  3.9664133596022144  P_value:  0.008990650615442174
+F_value:  3.8806068502793134  P_value:  0.010032554063785504
 ANOVA 1-way, P@10, BM25 runs:
-F_value:  8.803151745686728  P_value:  0.003795414427067481
+F_value:  8.606184136345895  P_value:  0.004172052436799392
 ANOVA 1-way, P@10, TF_IDF runs:
-F_value:  0.8512625894030074  P_value:  0.3585084710269246
+F_value:  0.771941272430669  P_value:  0.3817662938334756
 
 
 ANOVA 1-way, RPrec, all runs:
-F_value:  4.644451217758076  P_value:  0.003695696907257868
+F_value:  4.560140109254023  P_value:  0.00411143680902894
 ANOVA 1-way, RPrec, BM25 runs:
-F_value:  10.114080275211915  P_value:  0.0019816508846238735
+F_value:  9.883243960394038  P_value:  0.002207447081633146
 ANOVA 1-way, RPrec, TF_IDF runs:
-F_value:  0.5622715036511406  P_value:  0.4551801872976361
+F_value:  0.5694407525551687  P_value:  0.45229080454718784
 
  Multicomare of AP metrics
 Multiple Comparison of Means - Tukey HSD,FWER=0.05
 =============================================
 group1 group2 meandiff  lower   upper  reject
 ---------------------------------------------
-Run_0  Run_1  -0.0003  -0.0845  0.084  False 
-Run_0  Run_2  -0.0886  -0.1729 -0.0044  True 
-Run_0  Run_3  -0.0247  -0.1089  0.0596 False 
-Run_1  Run_2  -0.0884  -0.1727 -0.0041  True 
-Run_1  Run_3  -0.0244  -0.1087  0.0599 False 
-Run_2  Run_3   0.064   -0.0203  0.1483 False 
+Run_0  Run_1  -0.0003  -0.0843  0.0838 False 
+Run_0  Run_2   -0.088  -0.1721  -0.004  True 
+Run_0  Run_3  -0.0249  -0.1089  0.0591 False 
+Run_1  Run_2  -0.0878  -0.1718 -0.0037  True 
+Run_1  Run_3  -0.0246  -0.1087  0.0594 False 
+Run_2  Run_3   0.0632  -0.0209  0.1472 False 
 ---------------------------------------------
 
  Multicomare of P@10 metrics
@@ -49,12 +49,12 @@ Multiple Comparison of Means - Tukey HSD,FWER=0.05
 =============================================
 group1 group2 meandiff  lower   upper  reject
 ---------------------------------------------
-Run_0  Run_1  -0.0041  -0.1617  0.1536 False 
-Run_0  Run_2  -0.1837  -0.3413  -0.026  True 
-Run_0  Run_3  -0.0592  -0.2168  0.0985 False 
-Run_1  Run_2  -0.1796  -0.3372 -0.0219  True 
-Run_1  Run_3  -0.0551  -0.2127  0.1025 False 
-Run_2  Run_3   0.1245  -0.0332  0.2821 False 
+Run_0  Run_1   -0.004  -0.1602  0.1522 False 
+Run_0  Run_2   -0.18   -0.3362 -0.0238  True 
+Run_0  Run_3   -0.056  -0.2122  0.1002 False 
+Run_1  Run_2   -0.176  -0.3322 -0.0198  True 
+Run_1  Run_3   -0.052  -0.2082  0.1042 False 
+Run_2  Run_3   0.124   -0.0322  0.2802 False 
 ---------------------------------------------
 
  Multicomare of RPrec metrics
@@ -62,25 +62,25 @@ Multiple Comparison of Means - Tukey HSD,FWER=0.05
 =============================================
 group1 group2 meandiff  lower   upper  reject
 ---------------------------------------------
-Run_0  Run_1   0.002   -0.0809  0.0848 False 
-Run_0  Run_2  -0.1016  -0.1845 -0.0188  True 
-Run_0  Run_3   -0.022  -0.1048  0.0608 False 
-Run_1  Run_2  -0.1036  -0.1864 -0.0208  True 
-Run_1  Run_3   -0.024  -0.1068  0.0589 False 
-Run_2  Run_3   0.0796  -0.0032  0.1625 False 
+Run_0  Run_1   0.0019  -0.0806  0.0845 False 
+Run_0  Run_2  -0.1004  -0.1829 -0.0179  True 
+Run_0  Run_3   -0.022  -0.1046  0.0605 False 
+Run_1  Run_2  -0.1023  -0.1849 -0.0198  True 
+Run_1  Run_3   -0.024  -0.1065  0.0586 False 
+Run_2  Run_3   0.0784  -0.0042  0.1609 False 
 ---------------------------------------------
 
 
 ANOVA 1-way, AP, without Run_2:
-F_value:  0.3584143491005936  P_value:  0.6994050671254
+F_value:  0.3685518956326825  P_value:  0.6923726505670303
 
 
 ANOVA 1-way, P@10, without Run_2:
-F_value:  0.612133782732694  P_value:  0.5435974429063013
+F_value:  0.5588743981676251  P_value:  0.5730625866618946
 
 
 ANOVA 1-way, RPrec, without Run_2:
-F_value:  0.34858024177755353  P_value:  0.7062830871525674
+F_value:  0.35342424837152886  P_value:  0.7028742752765089
 
 
 ######################################################
@@ -93,39 +93,39 @@ RPrec:  0.2936 0.2934 0.2033 0.2769
 
 
 ANOVA 1-way, AP, all runs:
-F_value:  2.45987016500289  P_value:  0.06405426969226014
+F_value:  2.388321410001825  P_value:  0.07016618243054978
 ANOVA 1-way, AP, BM25 runs:
-F_value:  5.5782287038633775  P_value:  0.020204412708975335
+F_value:  5.395492560776061  P_value:  0.02225686051365784
 ANOVA 1-way, AP, TF_IDF runs:
-F_value:  0.4349539838401076  P_value:  0.5111470995198397
+F_value:  0.44693164110562694  P_value:  0.505367328790036
 
 
 ANOVA 1-way, P@10, all runs:
-F_value:  2.2937933620851303  P_value:  0.079304786260576
+F_value:  2.3036037172532695  P_value:  0.07824109844254819
 ANOVA 1-way, P@10, BM25 runs:
-F_value:  4.419280360885162  P_value:  0.03815229762159858
+F_value:  4.465667915106118  P_value:  0.03712276526384826
 ANOVA 1-way, P@10, TF_IDF runs:
-F_value:  1.762561067641101  P_value:  0.18745375219626878
+F_value:  1.7255689934291976  P_value:  0.19204478110927703
 
 
 ANOVA 1-way, RPrec, all runs:
-F_value:  3.124787319572642  P_value:  0.027035367064644187
+F_value:  3.0066080880451587  P_value:  0.03148416334170667
 ANOVA 1-way, RPrec, BM25 runs:
-F_value:  6.557431227992674  P_value:  0.012003125100467582
+F_value:  6.28794122184141  P_value:  0.013799639427238875
 ANOVA 1-way, RPrec, TF_IDF runs:
-F_value:  0.23926960262483477  P_value:  0.625849882290236
+F_value:  0.23413705749110703  P_value:  0.6295526002060444
 
  Multicomare of AP metrics
 Multiple Comparison of Means - Tukey HSD,FWER=0.05
 ============================================
 group1 group2 meandiff  lower  upper  reject
 --------------------------------------------
-Run_0  Run_1  -0.0027  -0.0951 0.0898 False 
-Run_0  Run_2  -0.0851  -0.1775 0.0073 False 
-Run_0  Run_3  -0.0259  -0.1183 0.0665 False 
-Run_1  Run_2  -0.0824  -0.1749  0.01  False 
-Run_1  Run_3  -0.0233  -0.1157 0.0691 False 
-Run_2  Run_3   0.0592  -0.0332 0.1516 False 
+Run_0  Run_1  -0.0026  -0.0953 0.0901 False 
+Run_0  Run_2  -0.0841  -0.1768 0.0085 False 
+Run_0  Run_3  -0.0262  -0.1189 0.0665 False 
+Run_1  Run_2  -0.0815  -0.1742 0.0112 False 
+Run_1  Run_3  -0.0236  -0.1163 0.0691 False 
+Run_2  Run_3   0.0579  -0.0348 0.1506 False 
 --------------------------------------------
 
  Multicomare of P@10 metrics
@@ -133,35 +133,35 @@ Multiple Comparison of Means - Tukey HSD,FWER=0.05
 ============================================
 group1 group2 meandiff  lower  upper  reject
 --------------------------------------------
-Run_0  Run_1   0.0061  -0.1702 0.1824 False 
-Run_0  Run_2  -0.1469  -0.3232 0.0294 False 
-Run_0  Run_3  -0.0816  -0.2579 0.0947 False 
-Run_1  Run_2  -0.1531  -0.3294 0.0232 False 
-Run_1  Run_3  -0.0878  -0.2641 0.0886 False 
-Run_2  Run_3   0.0653   -0.111 0.2416 False 
+Run_0  Run_1   0.006   -0.1684 0.1804 False 
+Run_0  Run_2   -0.146  -0.3204 0.0284 False 
+Run_0  Run_3   -0.08   -0.2544 0.0944 False 
+Run_1  Run_2   -0.152  -0.3264 0.0224 False 
+Run_1  Run_3   -0.086  -0.2604 0.0884 False 
+Run_2  Run_3   0.066   -0.1084 0.2404 False 
 --------------------------------------------
 
  Multicomare of RPrec metrics
 Multiple Comparison of Means - Tukey HSD,FWER=0.05
-=============================================
-group1 group2 meandiff  lower   upper  reject
----------------------------------------------
-Run_0  Run_1  -0.0002  -0.0909  0.0906 False 
-Run_0  Run_2  -0.0918  -0.1826  -0.001  True 
-Run_0  Run_3  -0.0169  -0.1077  0.0739 False 
-Run_1  Run_2  -0.0916  -0.1824 -0.0008  True 
-Run_1  Run_3  -0.0167  -0.1075  0.074  False 
-Run_2  Run_3   0.0749  -0.0159  0.1656 False 
----------------------------------------------
+============================================
+group1 group2 meandiff  lower  upper  reject
+--------------------------------------------
+Run_0  Run_1  -0.0002  -0.0911 0.0908 False 
+Run_0  Run_2  -0.0903  -0.1812 0.0007 False 
+Run_0  Run_3  -0.0167  -0.1077 0.0742 False 
+Run_1  Run_2  -0.0901  -0.1811 0.0009 False 
+Run_1  Run_3  -0.0165  -0.1075 0.0744 False 
+Run_2  Run_3   0.0736  -0.0174 0.1645 False 
+--------------------------------------------
 
 
 ANOVA 1-way, AP, without Run_2:
-F_value:  0.3230844624995566  P_value:  0.7244360869824187
+F_value:  0.33072590816757447  P_value:  0.7189351977357845
 
 
 ANOVA 1-way, P@10, without Run_2:
-F_value:  1.0797533241393664  P_value:  0.3424132052459255
+F_value:  1.0591581342434584  P_value:  0.34937855360779313
 
 
 ANOVA 1-way, RPrec, without Run_2:
-F_value:  0.16084392891314875  P_value:  0.8515776952312321
+F_value:  0.15747483577540758  P_value:  0.8544422344736234
